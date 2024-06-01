@@ -27,7 +27,7 @@
         }
         img {
             max-width: 100%;
-            height: 400px; 
+            height: 500px; 
             object-fit: cover; 
             border-radius: 10px; 
             margin-bottom: 20px;
@@ -74,6 +74,44 @@
         }
         .animate {
             transform: scale(1.2);
+        }
+        .external-links {
+            margin-top: 50px;
+            vertical-align: middle;
+            margin-top: 17px;
+            margin-right: 10px;
+        }
+        .external-links img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-top: 17px;
+            margin-right: 10px;
+
+        .external-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            margin-top: 17px;
+            margin-right: 10px;
+
+
+        }
+       
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
@@ -146,19 +184,22 @@
     </section>
     <footer>
         <p>Thank you for visiting my page!</p>
+        <div class="external-links">
+            <a class="button" href="https://alfa.edu.my" target="_blank"_blank><img src="university-solid.svg" alt="University"> ALFA University</a>
+            <a class="button" href="https://wa.me/+60166946162" target="_blank"><img src="whatsapp.svg" alt="WhatsApp">Mr. Zainuddin Bin Johori</a>
+            <a class="button" href="https://wa.me/+60182510322" target="_blank"><img src="whatsapp.svg" alt="WhatsApp">Ebrahim</a>
+        </div>
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const images = document.querySelectorAll("img");
-
+    
             images.forEach(img => {
-                img.addEventListener("click", function() {
-                    img.classList.remove("animate");
-                    void img.offsetWidth;
-                    img.classList.add("animate");
-                    img.addEventListener("transitionend", function() {
-                        img.classList.remove("animate");
-                    }, { once: true });
+                img.addEventListener("mouseover", function() {
+                    this.classList.add("animate");
+                });
+                img.addEventListener("mouseout", function() {
+                    this.classList.remove("animate");
                 });
             });
         });
